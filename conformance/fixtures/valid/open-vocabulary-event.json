@@ -1,0 +1,19 @@
+{
+  "event_id": "evt-open-vocabulary-001",
+  "event_type": "VENDOR_X_CUSTOM_GOVERNANCE_SIGNAL",
+  "event_version": "0.1",
+  "source_system": "EXTERNAL_SYSTEM_X",
+  "source_event_type": "CUSTOM_SOURCE_EVENT_X",
+  "source_event_id": "external-source-event-001",
+  "occurred_at": "2026-01-01T00:00:00Z",
+  "recorded_at": "2026-01-01T00:00:01Z",
+  "correlation_id": "corr-example-001",
+  "causation_id": "cause-example-001",
+  "sequence_number": 1,
+  "authority_stage": "CUSTOM_REVIEW_STAGE",
+  "authority_subject": "example-subject",
+  "decision": "OBSERVED",
+  "reason_code": "EXAMPLE_REASON",
+  "request_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "evidence_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+}

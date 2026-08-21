@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Canonical Governance Event Core v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "event_version",
+    "source_system",
+    "source_event_type",
+    "source_event_id",
+    "occurred_at",
+    "recorded_at",
+    "correlation_id",
+    "causation_id",
+    "sequence_number",
+    "authority_stage",
+    "authority_subject",
+    "decision",
+    "reason_code",
+    "request_digest",
+    "evidence_digest"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "event_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_version": {
+      "const": "0.1"
+    },
+    "source_system": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_event_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recorded_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "correlation_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "causation_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "authorization_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "sequence_number": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "authority_stage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority_subject": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "previous_state": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "resulting_state": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "previous_version": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "resulting_version": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "decision": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "reason_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "decision_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "request_digest": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "idempotency_digest": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evidence_digest": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Optional container for profile- or domain-specific extension data.",
+      "additionalProperties": true
+    }
+  }
+}

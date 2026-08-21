@@ -1,0 +1,24 @@
+{
+  "event_id": "evt-example-001",
+  "event_type": "GOVERNANCE_EVENT_RECORDED",
+  "event_version": "0.1",
+  "source_system": "EXAMPLE_SYSTEM",
+  "source_event_type": "EXAMPLE_SOURCE_EVENT",
+  "source_event_id": "source-event-001",
+  "occurred_at": "2026-01-01T00:00:00Z",
+  "recorded_at": "2026-01-01T00:00:01Z",
+  "correlation_id": "corr-example-001",
+  "causation_id": "cause-example-001",
+  "sequence_number": 1,
+  "authority_stage": "EXAMPLE_AUTHORITY_STAGE",
+  "authority_subject": "example-subject",
+  "decision": "OBSERVED",
+  "reason_code": "EXAMPLE_REASON",
+  "request_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "evidence_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+  "extensions": {
+    "example_profile": {
+      "example_key": "example_value"
+    }
+  }
+}
