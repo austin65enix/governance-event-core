@@ -1,0 +1,31 @@
+{
+  "contract_name": "GOVERNANCE_EVENT_MAPPING_CONTRACT",
+  "contract_version": "0.2",
+  "purpose": "Define generic source-to-canonical governance event mapping invariants without product-specific mapping instances.",
+  "mapping_invariants": [
+    "SOURCE_EVENT_IDENTITY_PRESERVED",
+    "SOURCE_EVENT_TYPE_PRESERVED",
+    "NO_TIMESTAMP_ONLY_CAUSALITY",
+    "NO_AUTHORITY_STAGE_COLLAPSE",
+    "NEGATIVE_AUTHORITY_FLAGS_PRESERVED",
+    "NULL_PREFERRED_TO_INVENTED_LINEAGE",
+    "BASE_STATUS_DISTINCT_FROM_GOVERNANCE_STATE"
+  ],
+  "identity_mapping": {
+    "event_id": {
+      "role": "CANONICAL_GEC_EVENT_IDENTITY",
+      "mapping": "GENERATE_USING_CANONICAL_ID_PROFILE",
+      "canonical_id_profile": "GEC-CANONICAL-EVENT-ID-PROFILE-1",
+      "preserved_from_source_event_id": false
+    },
+    "source_event_id": {
+      "role": "SOURCE_NATIVE_EVENT_IDENTITY",
+      "mapping": "PRESERVE_SOURCE_NATIVE_EVENT_ID",
+      "domain": "STRING_OR_SIGNED_INT64",
+      "native_type_preserved": true,
+      "native_value_preserved": true,
+      "int64_to_string_normalization_allowed": false,
+      "uuid_normalization_allowed": false
+    }
+  }
+}

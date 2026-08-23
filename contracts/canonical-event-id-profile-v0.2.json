@@ -1,0 +1,74 @@
+{
+  "canonical_id_profile": "GEC-CANONICAL-EVENT-ID-PROFILE-1",
+  "collision_policy": {
+    "distinct_identity_tuple_same_event_id": "FAIL_CLOSED"
+  },
+  "cross_version_policy": {
+    "event_id_stability": "preserved_while_profile_and_source_identity_tuple_unchanged",
+    "namespace_changes_on_canonical_id_profile_change": true,
+    "namespace_changes_on_event_version_only": false
+  },
+  "deterministic_name": {
+    "field_framing": {
+      "tag": "ascii",
+      "tag_length": "uint64_big_endian",
+      "value": "field_specific_bytes",
+      "value_length": "uint64_big_endian_octet_count"
+    },
+    "field_order": [
+      "source_system",
+      "source_event_type",
+      "source_event_id_type",
+      "source_event_id_value"
+    ],
+    "profile_magic": "GEC-CANONICAL-EVENT-ID",
+    "source_id_types": {
+      "SIGNED_INT64": {
+        "value_encoding": "signed_64_bit_twos_complement_big_endian",
+        "width_octets": 8
+      },
+      "STRING": {
+        "unicode_normalization": "NONE",
+        "value_encoding": "UTF-8"
+      }
+    }
+  },
+  "idempotency": {
+    "same_source_native_event_same_canonical_event_id": true
+  },
+  "identity_roles": {
+    "event_id": "canonical_gec_event_identity",
+    "source_event_id": "source_native_event_identity"
+  },
+  "namespace": {
+    "derivation": "GEC_UUIDV8_SHA256_NAME_BASED",
+    "name": "https://github.com/austin65enix/governance-event-core#canonical-event-id-profile-1",
+    "root_uuid": "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+    "scope": "canonical_id_profile",
+    "uuid": "b6aaed30-ecaf-83ee-8f93-81528036b0b9"
+  },
+  "source_event_id_domain": {
+    "oneOf": [
+      {
+        "minLength": 1,
+        "type": "string"
+      },
+      {
+        "maximum": 9223372036854775807,
+        "minimum": -9223372036854775808,
+        "type": "integer"
+      }
+    ],
+    "preserve_native_type": true,
+    "preserve_native_value": true,
+    "semantic_domain": "string_or_signed_int64"
+  },
+  "target_event_version": "0.2",
+  "uuid_profile": {
+    "hash": "SHA-256",
+    "hash_input": "namespace_uuid_bytes || deterministic_name_bytes",
+    "profile": "GEC_UUIDV8_SHA256_NAME_BASED",
+    "uuid_bits": "leftmost_128_hash_bits_then_set_version_and_variant",
+    "version": 8
+  }
+}

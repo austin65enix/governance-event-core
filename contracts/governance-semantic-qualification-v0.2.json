@@ -1,0 +1,86 @@
+{
+  "contract_name": "GOVERNANCE_SEMANTIC_QUALIFICATION",
+  "contract_version": "0.2",
+  "purpose": "Qualify source-derived canonical governance events using source-relative governance invariants without requiring deterministic fixture equality.",
+  "inputs": [
+    "OBSERVED_SOURCE_EVENT",
+    "AUTHORIZED_GOVERNANCE_EVENT_MAPPING",
+    "CANONICAL_GOVERNANCE_EVENT"
+  ],
+  "qualification_model": {
+    "source_relative": true,
+    "fixture_expected_event_required": false,
+    "canonical_schema_validation_required": true,
+    "authorized_mapping_required": true
+  },
+  "mapping_semantics": {
+    "source_table_must_match_mapping": true,
+    "source_event_type_must_match_mapping": true,
+    "canonical_event_type_must_match_mapping": true,
+    "authority_stage_must_match_mapping": true
+  },
+  "preservation_semantics": {
+    "event_id_preserved_from_source_event_id": false,
+    "source_event_id_preserved_from_source_event_id": true,
+    "source_event_type_preserved": true,
+    "occurred_at_preserved": true,
+    "correlation_id_preserved_when_present": true,
+    "causation_id_preserved_when_present": true
+  },
+  "lineage_semantics": {
+    "invent_missing_correlation_id": false,
+    "invent_missing_causation_id": false,
+    "timestamp_may_establish_causation": false
+  },
+  "authority_semantics": {
+    "negative_authority_flags_must_be_preserved": true,
+    "qualification_grants_authority": false,
+    "qualification_advances_authority_stage": false,
+    "authority_stage_may_be_inferred_outside_authorized_mapping": false
+  },
+  "ordering_semantics": {
+    "source_sequence_is_global_order": false,
+    "persistence_sequence_is_global_order": false,
+    "timestamp_is_global_order": false,
+    "gap_implies_missing_event": false
+  },
+  "outcomes": [
+    "QUALIFIED",
+    "REJECTED_MAPPING",
+    "REJECTED_SCHEMA",
+    "REJECTED_SEMANTICS"
+  ],
+  "scope_limits": {
+    "cross_event_transition_validation": false,
+    "cross_event_causality_validation": false,
+    "missing_event_detection": false,
+    "global_order_validation": false,
+    "live_bpm_database_read": false,
+    "background_polling": false
+  },
+  "invariants": [
+    "SOURCE_EVENT_IDENTITY_PRESERVED",
+    "SOURCE_EVENT_TYPE_PRESERVED",
+    "NO_INVENTED_LINEAGE",
+    "NEGATIVE_AUTHORITY_FLAGS_PRESERVED",
+    "NO_TIMESTAMP_ONLY_CAUSALITY",
+    "NO_AUTHORITY_STAGE_COLLAPSE",
+    "OBSERVATION_DOES_NOT_GRANT_AUTHORITY",
+    "QUALIFICATION_DOES_NOT_GRANT_AUTHORITY",
+    "QUALIFICATION_DOES_NOT_ADVANCE_AUTHORITY_STAGE"
+  ],
+  "canonical_identity_semantics": {
+    "event_id_role": "CANONICAL_GEC_EVENT_IDENTITY",
+    "source_event_id_role": "SOURCE_NATIVE_EVENT_IDENTITY",
+    "source_event_id_domain": "STRING_OR_SIGNED_INT64",
+    "source_event_id_native_type_preserved": true,
+    "source_event_id_native_value_preserved": true,
+    "event_id_equals_source_event_id_required": false,
+    "event_id_preserved_from_source_event_id": false,
+    "source_event_id_preserved_from_source_event_id": true,
+    "int64_to_string_normalization_allowed": false,
+    "source_event_id_to_uuid_normalization_allowed": false,
+    "same_source_native_event_same_canonical_event_id": true,
+    "canonical_id_profile": "GEC-CANONICAL-EVENT-ID-PROFILE-1"
+  }
+}
