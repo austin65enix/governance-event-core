@@ -1,0 +1,66 @@
+{
+  "artifact_class": "NON_NORMATIVE_QUALIFIED_EVIDENCE_PROFILE",
+  "profile_version": "0.1",
+  "product": "OpenCode",
+  "status": "QUALIFIED_EVIDENCE_SIDE_CASE_STUDY",
+  "disclaimer": "This is a qualified evidence-side case study, not a public normative OpenCode profile.",
+  "source_system": {
+    "source_identity": "OPENCODE_PRODUCT_IDENTITY",
+    "canonical_value": "opencode",
+    "case_policy": "LOWERCASE_ASCII",
+    "namespace_policy": "GEC_SOURCE_SYSTEM_NAMESPACE_V1"
+  },
+  "mappings": [
+    {
+      "dimension": "authority_stage_vocabulary",
+      "source_or_candidate_input": "SEALED_SEMANTIC_CANDIDATE_EVIDENCE",
+      "canonical_value": "RUNTIME_AUTHORIZATION"
+    },
+    {
+      "dimension": "canonical_permission_request_event_type",
+      "source_or_candidate_input": "permission.asked",
+      "canonical_value": "TOOL_EXECUTION_AUTHORIZATION_REQUESTED"
+    },
+    {
+      "dimension": "canonical_permission_decision_event_type",
+      "source_or_candidate_input": "permission.replied",
+      "canonical_value": "TOOL_EXECUTION_AUTHORIZATION_DECISION_RECORDED"
+    },
+    {
+      "dimension": "source_system_opencode",
+      "source_or_candidate_input": "OPENCODE_PRODUCT_IDENTITY",
+      "canonical_value": "opencode"
+    }
+  ],
+  "semantic_constraints": {
+    "permission_replied_is_not_equivalent_to_authorization_granted": true,
+    "decision_event_type_is_not_decision_outcome": true,
+    "decision_outcome_remains_independent": true,
+    "approval_is_not_execution": true
+  },
+  "qualification": {
+    "profile_dimension_count": 4,
+    "unresolved_canonical_value_count": 0,
+    "evidence_side_materialization_qualified": true,
+    "exact_profile_mapping_construction_qualified": true,
+    "repository_profile_is_normative": false,
+    "external_community_validation_observed": false
+  },
+  "evidence": {
+    "qualified_artifact_sha256": "e84c05eda719bd97134237a04dcf1e9adab287ce5aa3e2633f2e49bec29cb458",
+    "canonical_value_decision": "OSS-R3-SPR-H3-R10",
+    "materialization_authorization": "OSS-R3-SPR-H3-R12",
+    "materialization_execution": "OSS-R3-SPR-H3-R13",
+    "post_execution_qualification": "OSS-R3-SPR-H3-R14",
+    "scoped_profile_closeout": "OSS-R3-SPR-H3-R15",
+    "repository_adoption_authorization": "OSS-R3-RPA-H3-R2"
+  },
+  "non_claims": [
+    "This artifact is not an official OpenCode profile.",
+    "This artifact does not claim OpenCode endorsement.",
+    "This artifact does not claim OpenSSF endorsement.",
+    "This artifact does not claim CNCF endorsement.",
+    "This artifact does not encode a permission decision outcome in the event type.",
+    "This artifact does not establish publication or execution authority."
+  ]
+}
