@@ -1,0 +1,12 @@
+{
+  "artifact_class": "SANITIZED_PUBLIC_RECEIPT_FIXTURE",
+  "fixture_version": "0.1",
+  "receipt_content": "QUALIFIED_VERIFICATION_RECEIPT",
+  "package_status": "SEALED_VERIFIED",
+  "post_execution_qualification": "PASS",
+  "create_gate": "CLOSED",
+  "authority_promotion": false,
+  "runtime_execution": false,
+  "repository_mutation": false,
+  "successor_assignment": false
+}

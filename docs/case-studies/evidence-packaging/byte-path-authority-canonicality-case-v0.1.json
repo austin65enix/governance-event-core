@@ -1,0 +1,54 @@
+{
+  "artifact_class": "NON_NORMATIVE_QUALIFIED_EVIDENCE_CASE_STUDY",
+  "case_version": "0.1",
+  "title": "Byte Identity Is Not Canonicality",
+  "status": "SANITIZED_PUBLIC_CASE_STUDY",
+  "source_scope": "SEALED_DUPLICATE_RECEIPT_ADJUDICATION",
+  "source_evidence_disclosure": "PRIVATE_LINEAGE_NOT_REPUBLISHED",
+  "invariants": [
+    "BYTE_IDENTITY_IS_NOT_PATH_IDENTITY",
+    "PATH_IDENTITY_IS_NOT_CREATION_AUTHORITY",
+    "CREATION_AUTHORITY_IS_NOT_CANONICALITY",
+    "BYTE_IDENTITY_DOES_NOT_ESTABLISH_CANONICALITY",
+    "CREATION_ORDER_DOES_NOT_AUTOMATICALLY_ESTABLISH_CANONICALITY"
+  ],
+  "candidates": [
+    {
+      "candidate_id": "candidate-01",
+      "relative_path": "fixtures/candidate-01/receipt.json",
+      "content_sha256": "196808d4851c5fb8bb534b11a7011e9ee795f27af840e83f6e621ab6ab103875",
+      "creation_context": "FIRST_SUCCESSFUL_CREATION",
+      "creation_authority": "INITIAL_CREATION_AUTHORITY_BOUND",
+      "canonical": true
+    },
+    {
+      "candidate_id": "candidate-02",
+      "relative_path": "fixtures/candidate-02/receipt.json",
+      "content_sha256": "196808d4851c5fb8bb534b11a7011e9ee795f27af840e83f6e621ab6ab103875",
+      "creation_context": "LATER_UNINTENDED_RERUN",
+      "creation_authority": "NO_SEPARATE_CREATION_AUTHORITY_OBSERVED",
+      "canonical": false
+    }
+  ],
+  "adjudication": {
+    "byte_identity": "EQUAL",
+    "path_identity": "DISTINCT",
+    "candidate_01_canonical_receipt": true,
+    "candidate_02_noncanonical_duplicate": true,
+    "candidate_02_class": "BYTE_IDENTICAL_UNINTENDED_RERUN",
+    "canonical_selection_basis": "EXPLICIT_SEALED_ADJUDICATION",
+    "content_divergence": false,
+    "semantic_divergence": false,
+    "canonicality_inferred_from_bytes": false,
+    "canonicality_inferred_from_timestamp_alone": false,
+    "authority_inferred_from_bytes": false,
+    "noncanonical_duplicate_preserved": true
+  },
+  "non_claims": [
+    "This case study is not a normative Governance Event Core contract.",
+    "The public fixtures are sanitized representations, not raw source evidence.",
+    "Byte equality does not grant creation, publication, execution, or canonical-selection authority.",
+    "Earlier creation time alone does not establish canonicality.",
+    "This case study does not define runtime behavior or a product-specific profile."
+  ]
+}
